@@ -100,6 +100,26 @@ footer .widgets .widgetizedArea
   transform: translateY(-50%);
 }
 
+#menu-social-media
+{
+   margin: 0px;
+   padding: 0px;
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   justify-content: center;
+}
+
+#menu-social-media li 
+{
+   @extend .mx-2;
+   list-style: none !important;
+}
+
+#menu-social-media i 
+{
+   font-size: 32px;
+}
 
 
 @media screen and (max-width: 1024px) 
