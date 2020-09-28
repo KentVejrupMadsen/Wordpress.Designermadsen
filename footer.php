@@ -1,4 +1,8 @@
         <footer> 
+            <nav class="widgets"> 
+                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer Widget Area") ) : ?>
+                <?php endif;?>
+            </nav>
 
         </footer>
     </body> 
