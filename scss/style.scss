@@ -44,6 +44,33 @@ header nav ul .active a
    
 }
 
+footer .widgets
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 32px;
+   @extend .bg-dark;
+   color: white;
+
+   padding-top: 32px;
+   padding-bottom: 32px;
+}
+
+footer .widgets .widgetizedArea
+{
+   margin-right: 32px;
+   margin-left: 32px;
+}
+
+.widgetizedArea ul li
+{
+   list-style: none;
+}
+
+.widgetizedArea div ul li
+{
+   list-style: none;
+}
 
 .cover-image
 {
@@ -73,6 +100,18 @@ header nav ul .active a
   transform: translateY(-50%);
 }
 
+
+
+@media screen and (max-width: 1024px) 
+{
+   footer .widgets
+   {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+
+   }
+   
+}
 
 
 @import 'bootstrap/bootstrap.scss';
