@@ -59,8 +59,6 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     {
         $output .= '</span>';
     }
-    
-    
 }
 
 function start_lvl( &$output, $depth = 0, $arg = array() )
@@ -81,6 +79,33 @@ function end_lvl(&$output, $depth=0, $args=array())
 
 };
 
+
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+
+function my_wp_nav_menu_objects( $items, $args ) 
+{
+    apply_logo($items, $args);
+
+    return $items;
+}
+
+
+function apply_logo($items, $args)
+{
+    foreach( $items as &$item )
+    {
+        $icon = get_field('icon-name', $item);
+    
+        if ($icon)
+        {
+            $item->title = '<i class="' . $icon . '"></i>';
+        }
+
+    }
+
+    return $items;
+}
 
 function designermadsen_setup_after()
 {
