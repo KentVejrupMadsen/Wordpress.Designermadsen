@@ -12,6 +12,26 @@
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>">
     </head>
     <body>
-        <header> 
-        
+        <header>
+            <nav> 
+                <a class="navbar-brand" href="#">Wordpress</a>
+                
+                <ul> 
+                    <li> 
+                        <a href="#"> 
+                            Index
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#"> 
+                            About
+                        </a>
+                    </li>
+                    <li> 
+                        <a href="#"> 
+                            Etc
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
