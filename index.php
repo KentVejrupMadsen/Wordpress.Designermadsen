@@ -22,7 +22,8 @@
                                             'container_class' => '',
                                             'theme_location' => 'social-menu',
                                             'menu_class' => 'navigation-menu',
-                                            'item_spacing' => 'preserve'
+                                            'item_spacing' => 'preserve',
+                                            'walker' => new menu_header_walker()
                                     )
                                 ); 
                                 ?>
@@ -36,6 +37,10 @@
 
         <?php else: ?>
             <!-------------------------->
+            <h2> <?php the_title(); ?> </h2>
+            <div> 
+                <?php the_content(); ?>
+            </div>
 
         <?php endif; ?>
 
