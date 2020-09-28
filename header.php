@@ -13,25 +13,19 @@
     </head>
     <body>
         <header>
-            <nav> 
-                <a class="navbar-brand" href="#">Wordpress</a>
-                
-                <ul> 
-                    <li> 
-                        <a href="#"> 
-                            Index
-                        </a>
-                    </li>
-                    <li> 
-                        <a href="#"> 
-                            About
-                        </a>
-                    </li>
-                    <li> 
-                        <a href="#"> 
-                            Etc
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <?php if( has_nav_menu('header-menu') ): ?>
+                <?php 
+                wp_nav_menu(
+                    array(
+                            'container' => 'nav',
+                            'container_id' => '',
+                            'container_class' => '',
+                            'theme_location' => 'header-menu',
+                            'menu_class' => 'navigation-menu',
+                            'item_spacing' => 'preserve',
+                            'walker' => new menu_header_walker()
+                    )
+                ); 
+                ?>
+            <?php endif; ?>
         </header>

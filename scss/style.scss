@@ -6,6 +6,45 @@ body
    padding: 0px;
 }
 
+header 
+{
+
+}
+
+header nav 
+{
+   @extend .navbar;
+   @extend .navbar-expand-lg;
+   @extend .navbar-light;
+   @extend .bg-light;
+   
+}
+
+header nav ul 
+{
+   @extend .navbar-nav;
+   
+}
+
+header nav ul li 
+{
+   @extend .nav-item;
+   
+}
+
+header nav ul a
+{
+   @extend .nav-link;
+   
+}
+
+header nav ul .active a
+{
+   
+   
+}
+
+
 .cover-image
 {
    position: relative;
@@ -33,6 +72,7 @@ body
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
 
 
 @import 'bootstrap/bootstrap.scss';

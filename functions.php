@@ -1,20 +1,113 @@
 <?php 
+class menu_header_walker extends Walker_Nav_Menu
+{
+function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
+{
+    
+    // Preparing variables
+    // https://www.ibenic.com/how-to-create-wordpress-custom-menu-walker-nav-menu-class/
+    
+    $object = $item->object;
+    $type = $item->type;
+    $title = $item->title;
+    $description = $item->description;
+    $permalink = $item->url;
+
+
+    //  implode(" ", $item->classes)
+    
+    $current = "";
+
+    foreach($item->classes as $value)
+    {
+        if($value == "current_page_item")
+        {
+            $current = "active";
+        }
+    }
+    
+    $output .= "<li class='". $current  . "'>";
+    
+    //Add SPAN if no Permalink
+    if( $permalink && $permalink != '#' ) 
+    {
+        
+        if(in_array("menu-item-has-children", $item->classes, true))
+        {
+            $output .= "<a class='' href='" . $permalink . "'>";
+        }
+        else 
+        {
+            $output .= "<a class='' href='" . $permalink . "'>";
+        }
+    } 
+    else 
+    {
+        $output .= '<span>';
+    }
+    
+    $output .= $title;
+    if( $description != '' && $depth == 0 ) 
+    {
+        $output .= '<small class="description">' . $description . '</small>';
+    }
+    if( $permalink && $permalink != '#' ) 
+    {
+        $output .= '</a>';
+    } 
+    else 
+    {
+        $output .= '</span>';
+    }
+    
+    
+}
+
+function start_lvl( &$output, $depth = 0, $arg = array() )
+{
+    
+    $output .= "\n<ul class='sub-menu'>\n";
+    $output .= '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+    
+}
+
+function end_lvl(&$output, $depth=0, $args=array()) 
+{
+    
+    $output .= "</div>\n";
+    $output .= "</ul>\n";
+
+}
+
+};
+
+
 function designermadsen_setup_after()
 {
       /* Adds support for wordpress to handle setting the title  */
       add_theme_support( 'title-tag' );
       add_theme_support( 'post-thumbnails' );
 
-      
       register_menus();  
 }
 
 function register_menus()
 {
     register_nav_menus( array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
+                               'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
+                               'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
                                'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) ) );
-}
 
+    
+  register_sidebar(array(
+    'name' => 'Footer Widget Area',
+    'before_widget' => '<div class = "widgetizedArea">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ) );
+                               
+}
 
 add_action('after_setup_theme', 'designermadsen_setup_after');
 
@@ -31,5 +124,6 @@ function designermadsen_enqueue_scripts()
 }
 
 add_action( 'wp_enqueue_scripts', 'designermadsen_enqueue_scripts' );
+
 
 ?>
