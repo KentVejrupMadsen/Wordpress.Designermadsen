@@ -97,14 +97,6 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     //  implode(" ", $item->classes)
     
     $current = "";
-
-    foreach($item->classes as $value)
-    {
-        if($value == "current_page_item")
-        {
-            $current = "active";
-        }
-    }
     
     $output .= "<li class='". $current  . "'>";
     
@@ -158,6 +150,33 @@ function end_lvl(&$output, $depth=0, $args=array())
 }
 
 };
+
+
+
+function my_wp_nav_menu_objects( $items, $args ) 
+{
+    apply_logo($items, $args);
+
+    return $items;
+}
+
+function apply_logo($items, $args)
+{
+    foreach( $items as &$item )
+    {
+        $icon = get_field('icon-name', $item);
+    
+        if ($icon)
+        {
+            $item->title = '<i class="' . $icon . '"></i>';
+        }
+
+    }
+
+    return $items;
+}
+
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
 
 function designermadsen_setup_after()
 {
