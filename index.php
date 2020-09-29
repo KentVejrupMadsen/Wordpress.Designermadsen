@@ -32,6 +32,81 @@
                         </div>                    
                 <?php endwhile; ?>
 
+                <!--------------------------------------------------------------------->
+                <div class="sum"> 
+                    <h1> Opgaver </h1>
+                    <p> Kort summering over de typer af opgaver jeg arbejder med. </p>
+
+                    <div class="containment"> 
+                        <a href="" class="sum-link"> 
+                            <div> 
+                                <div class="logo"> 
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="description"> 
+                                    <p class="bold"> 
+                                        Python 
+                                    </p>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                        <a href="" class="sum-link"> 
+                            <div> 
+                                <div class="logo"> 
+                                    C#
+                                </div>
+                                <div class="description"> 
+                                    <p class="bold"> 
+                                        C# 
+                                    </p>
+                                    <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+
+                        
+                        <a href="" class="sum-link"> 
+                            <div> 
+                                
+                                <div class="logo"> 
+                                    <i class="fab fa-php"></i>
+                                </div>
+                                <div class="description"> 
+                                    <p class="bold"> 
+                                        PHP
+                                    </p>
+                                    <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        
+                        
+                        <a href="" class="sum-link"> 
+                            <div> 
+                                <div class="logo"> 
+                                    <i class="fas fa-file-code"></i> 
+                                </div>
+                                <div class="description"> 
+                                    <p class="bold"> 
+                                        Frontend 
+                                    </p>
+                                    <p> 
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
             <?php endif; ?>
 

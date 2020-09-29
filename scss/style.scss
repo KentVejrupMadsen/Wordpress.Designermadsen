@@ -142,6 +142,69 @@ footer .widgets .widgetizedArea
    font-size: 32px !important;
 }
 
+#menu-misc
+{
+   @extend .my-1;
+   margin: 0px;
+   padding: 0px;
+   display: flex;
+   justify-content: center;
+}
+
+#menu-misc li
+{
+   @extend .mx-2;
+   list-style: none;   
+}
+
+.sum 
+{
+   @extend .py-5;
+}
+
+.sum h1 
+{
+   text-align: center;
+}
+
+.sum p 
+{
+   text-align: center;
+}
+
+.sum .containment
+{
+   
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+   grid-gap: 32px;
+}
+
+.sum .sum-link
+{
+   @extend a;
+   text-decoration: none !important;
+}
+
+.sum .sum-link .logo
+{
+   text-align: center;
+   font-size: 72px;
+}
+
+.bold 
+{
+   font-weight: bold;
+   color:black !important;
+}
+
+.sum .sum-link .description
+{
+   color: black !important;
+}
+
+
 @media screen and (max-width: 1024px) 
 {
    footer .widgets
