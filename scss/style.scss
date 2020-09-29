@@ -1,5 +1,10 @@
 $background-image-colors: #2d3436;
 
+.background
+{
+   background-color: $background-image-colors;
+}
+
 body 
 {
    margin:0px;
@@ -44,12 +49,41 @@ header nav ul .active a
    
 }
 
+.cases
+{
+   @extend .py-5;
+   @extend .px-3;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 64px;
+}
+
+.cases .case
+{
+   display: grid;
+   grid-template-rows: auto auto;
+   grid-gap: 16px;
+}
+
+
+.cases .case p
+{
+   text-align: center;
+   color:white;
+}
+
+.cases .case img
+{
+   background-color: white;
+   width: 100% !important;
+   height: 200px;
+}
+
 footer .widgets
 {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
    grid-gap: 32px;
-   @extend .bg-dark;
    color: white;
 
    padding-top: 32px;

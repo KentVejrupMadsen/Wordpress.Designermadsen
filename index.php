@@ -32,8 +32,9 @@
                         </div>                    
                 <?php endwhile; ?>
 
-                <!--------------------------------------------------------------------->
-                <div class="sum"> 
+            <?php endif; ?>
+
+            <div class="sum"> 
                     <h1> Opgaver </h1>
                     <p> Kort summering over de typer af opgaver jeg arbejder med. </p>
 
@@ -108,7 +109,24 @@
                     </div>
                 </div>
 
-            <?php endif; ?>
+            <div class="cases background"> 
+                <div class="case"> 
+                    <img href="" />
+                    <p> Title </p>
+                </div>
+                
+                <div class="case"> 
+                    <img href="" />
+                    <p> Title </p>
+                </div>
+
+                <div class="case"> 
+                    <img href="" />
+                    <p> Title </p>
+                </div>
+            </div>
+
+
 
         <?php else: ?>
             <!-------------------------->
