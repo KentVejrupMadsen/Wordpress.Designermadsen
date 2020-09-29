@@ -121,7 +121,7 @@ footer .widgets .widgetizedArea
    font-size: 32px !important;
 }
 
-#menu-social-container
+.menu-social-container
 {
    margin: 0px;
    padding: 0px;
@@ -131,13 +131,13 @@ footer .widgets .widgetizedArea
    justify-content: center;
 }
 
-#menu-social-container li 
+.menu-social-container li 
 {
    @extend .mx-2;
    list-style: none !important;
 }
 
-#menu-social-container i 
+.menu-social-container i 
 {
    font-size: 32px !important;
 }
