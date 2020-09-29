@@ -23,7 +23,7 @@
                                             'theme_location' => 'social-menu',
                                             'menu_class' => 'navigation-menu',
                                             'item_spacing' => 'preserve',
-                                            'walker' => new menu_header_walker()
+                                            'walker' => new menu_social_walker()
                                     )
                                 ); 
                                 ?>
