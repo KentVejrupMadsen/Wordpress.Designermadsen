@@ -34,96 +34,76 @@
 
             <?php endif; ?>
 
+            <?php 
+                    $args_assign = array(
+                        'numberposts' => 4,
+                        'category'=> 10
+                    );
+
+                    $assignments = get_posts( $args_assign );
+
+                    if(! empty( $assignments ) ):
+                ?>
+
             <div class="sum"> 
                     <h1> Opgaver </h1>
                     <p> Kort summering over de typer af opgaver jeg arbejder med. </p>
 
                     <div class="containment"> 
-                        <a href="" class="sum-link"> 
+                        <?php foreach( $assignments as $assignment ): ?>
+                        <a href="<?php echo get_permalink( $assignment->ID ); ?>" class="sum-link"> 
                             <div> 
                                 <div class="logo"> 
-                                    <i class="fab fa-python"></i>
-                                </div>
-                                <div class="description"> 
-                                    <p class="bold"> 
-                                        Python 
-                                    </p>
-                                    <p> 
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
+                                    <?php if( get_the_title( $assignment->ID ) == "Python" ): ?>
+                                        <i class="fab fa-python"></i>
+                                    <?php endif; ?>
 
-                        
-                        <a href="" class="sum-link"> 
-                            <div> 
-                                <div class="logo"> 
-                                    C#
-                                </div>
-                                <div class="description"> 
-                                    <p class="bold"> 
-                                        C# 
-                                    </p>
-                                    <p> 
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
+                                    <?php if( get_the_title( $assignment->ID ) == "C#" ): ?>
+                                        C#
+                                    <?php endif; ?>
 
-                        
-                        <a href="" class="sum-link"> 
-                            <div> 
-                                
-                                <div class="logo"> 
-                                    <i class="fab fa-php"></i>
+                                    <?php if( get_the_title( $assignment->ID ) == "PHP"): ?>
+                                        <i class="fab fa-php"></i>
+                                    <?php endif; ?>
+
+                                    <?php if( get_the_title( $assignment->ID ) == "Frontend" ): ?>
+                                        <i class="fas fa-laptop-code"></i>
+                                    <?php endif; ?>
+
                                 </div>
                                 <div class="description"> 
                                     <p class="bold"> 
-                                        PHP
+                                        <?php echo get_the_title($assignment->ID); ?>
                                     </p>
                                     <p> 
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
+                                        <?php echo get_the_excerpt( $assignment->ID ); ?>  
                                     </p>
                                 </div>
                             </div>
                         </a>
-                        
-                        
-                        <a href="" class="sum-link"> 
-                            <div> 
-                                <div class="logo"> 
-                                    <i class="fas fa-file-code"></i> 
-                                </div>
-                                <div class="description"> 
-                                    <p class="bold"> 
-                                        Frontend 
-                                    </p>
-                                    <p> 
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id enim ac nisl vehicula tincidunt. Nunc vitae varius erat. 
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
-            <div class="cases background"> 
+                <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+
                 <?php 
-                // 9
                     $args = array(
                         'numberposts' => 3,
-                        'category'=> 9
+                        'category'=> 5
                     );
 
                     $case_posts = get_posts( $args );
 
                     if(! empty( $case_posts ) ):
-                        foreach( $case_posts as $posts ):
                 ?>
+            <div class="cases background"> 
+                <?php 
+                        foreach( $case_posts as $posts ):
+                    ?>
 
-                <a href="<?php echo get_permalink( $posts->ID ) ?>"> 
+                <a href="<?php echo get_permalink( $posts->ID ); ?>"> 
                     <div class="case"> 
                         <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" />
                         <p> <?php echo get_the_title( $posts->ID ); ?> </p>
@@ -132,27 +112,37 @@
                 </a>
                 
                 <?php
-                    endforeach; 
-                    endif; ?>
-            </div>
+                    endforeach; ?> 
+                </div>
+                <?php wp_reset_postdata(); ?>
+                <?php endif; ?>
 
             <div class="process"> 
-                <h2> Processen </h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus, felis quis efficitur placerat, ligula neque aliquam elit, in tincidunt nisi quam ac felis. Quisque eget dapibus ligula. Nulla lacinia accumsan lacus, eget tempor nunc placerat eget. Aliquam id diam ut libero vehicula placerat. </p>
+                <h2> Arbejds processen. </h2>
+                <p> </p>
 
-                <div> 
+                <div class="process-container"> 
                     <div> 
-
+                        <p class="bold"> Planlægning </p>
+                        <p> </p>
                     </div>
                     
                     <div> 
-                        
+                        <p class="bold"> Udvikling </p>
+                        <p> </p>
                     </div>
-                    
+
                     <div> 
-                        
+                        <p class="bold"> Accept </p>
+                        <p> </p>
+                    </div>
+
+                    <div> 
+                        <p class="bold"> Modtagelse </p>
+                        <p> </p>
                     </div>
                 </div>
+
             </div>
 
         <?php else: ?>
