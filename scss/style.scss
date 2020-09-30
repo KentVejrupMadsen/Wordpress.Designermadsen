@@ -11,43 +11,6 @@ body
    padding: 0px;
 }
 
-header 
-{
-
-}
-
-header nav 
-{
-   @extend .navbar;
-   @extend .navbar-expand-lg;
-   @extend .navbar-light;
-   @extend .bg-light;
-   
-}
-
-header nav ul 
-{
-   @extend .navbar-nav;
-   
-}
-
-header nav ul li 
-{
-   @extend .nav-item;
-   
-}
-
-header nav ul a
-{
-   @extend .nav-link;
-   
-}
-
-header nav ul .active a
-{
-   
-   
-}
 
 .cases
 {
@@ -79,33 +42,6 @@ header nav ul .active a
    object-fit: cover;
 }
 
-footer .widgets
-{
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 32px;
-   color: white;
-
-   padding-top: 32px;
-   padding-bottom: 32px;
-}
-
-footer .widgets .widgetizedArea
-{
-   margin-right: 32px;
-   margin-left: 32px;
-}
-
-.widgetizedArea ul li
-{
-   list-style: none;
-}
-
-.widgetizedArea div ul li
-{
-   list-style: none;
-}
-
 .cover-image
 {
    position: relative;
@@ -134,62 +70,6 @@ footer .widgets .widgetizedArea
   transform: translateY(-50%);
 }
 
-#menu-social-media
-{
-   margin: 0px;
-   padding: 0px;
-   display: flex;
-   flex-direction: row;
-   width: 100%;
-   justify-content: center;
-}
-
-#menu-social-media li 
-{
-   @extend .mx-2;
-   list-style: none !important;
-}
-
-#menu-social-media i 
-{
-   font-size: 32px !important;
-}
-
-.menu-social-container ul
-{
-   margin: 0px;
-   padding: 0px;
-   display: flex;
-   flex-direction: row !important;
-   width: 100%;
-   justify-content: center !important;
-}
-
-.menu-social-container ul li 
-{
-   @extend .mx-2;
-   list-style: none !important;
-}
-
-.menu-social-container i 
-{
-   font-size: 32px !important;
-}
-
-#menu-misc
-{
-   @extend .my-1;
-   margin: 0px;
-   padding: 0px;
-   display: flex;
-   justify-content: center;
-}
-
-#menu-misc li
-{
-   @extend .mx-2;
-   list-style: none;   
-}
 
 .sum 
 {
@@ -238,6 +118,19 @@ footer .widgets .widgetizedArea
    color: black !important;
 }
 
+.process
+{
+   @extend .py-5;
+}
+
+.process h2
+{
+   text-align: center;
+}
+
+@import './menu.scss';
+@import './header.scss';
+@import './footer.scss';
 
 @media screen and (max-width: 1024px) 
 {

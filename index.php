@@ -111,22 +111,23 @@
 
             <div class="cases background"> 
                 <?php 
+                // 9
                     $args = array(
                         'numberposts' => 3,
                         'category'=> 9
                     );
 
-                    $case_posts = get_posts($args);
+                    $case_posts = get_posts( $args );
 
-                    if(! empty($case_posts)):
-                        foreach($case_posts as $posts):
+                    if(! empty( $case_posts ) ):
+                        foreach( $case_posts as $posts ):
                 ?>
 
-                <a href="<?php echo get_permalink($posts->ID) ?>"> 
+                <a href="<?php echo get_permalink( $posts->ID ) ?>"> 
                     <div class="case"> 
-                        <img src="<?php echo get_the_post_thumbnail_url($posts->ID); ?>" />
-                        <p> <?php echo get_the_title($posts->ID); ?> </p>
-                        <p> <?php echo get_the_excerpt($posts->ID); ?> </p>
+                        <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" />
+                        <p> <?php echo get_the_title( $posts->ID ); ?> </p>
+                        <p> <?php echo get_the_excerpt( $posts->ID ); ?> </p>
                     </div>
                 </a>
                 
@@ -135,7 +136,24 @@
                     endif; ?>
             </div>
 
+            <div class="process"> 
+                <h2> Processen </h2>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus, felis quis efficitur placerat, ligula neque aliquam elit, in tincidunt nisi quam ac felis. Quisque eget dapibus ligula. Nulla lacinia accumsan lacus, eget tempor nunc placerat eget. Aliquam id diam ut libero vehicula placerat. </p>
 
+                <div> 
+                    <div> 
+
+                    </div>
+                    
+                    <div> 
+                        
+                    </div>
+                    
+                    <div> 
+                        
+                    </div>
+                </div>
+            </div>
 
         <?php else: ?>
             <!-------------------------->

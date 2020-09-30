@@ -1,0 +1,38 @@
+
+header 
+{
+
+}
+
+header nav 
+{
+   @extend .navbar;
+   @extend .navbar-expand-lg;
+   @extend .navbar-light;
+   @extend .bg-light;
+   
+}
+
+header nav ul 
+{
+   @extend .navbar-nav;
+   
+}
+
+header nav ul li 
+{
+   @extend .nav-item;
+   
+}
+
+header nav ul a
+{
+   @extend .nav-link;
+   
+}
+
+header nav ul .active a
+{
+   
+   
+}
