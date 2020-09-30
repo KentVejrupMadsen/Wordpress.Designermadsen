@@ -91,7 +91,7 @@
                 <?php 
                     $args = array(
                         'numberposts' => 3,
-                        'category'=> 5
+                        'category'=> 9
                     );
 
                     $case_posts = get_posts( $args );
