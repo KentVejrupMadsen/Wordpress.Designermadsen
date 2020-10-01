@@ -148,6 +148,26 @@ body
    
 }
 
+.journal
+{
+   display: grid;
+   grid-template-columns: auto auto;
+   grid-template-rows: auto;
+}
+
+.journal .journal-entry
+{
+   @extend .py-2;
+   @extend .px-4;
+   
+   text-decoration: none;
+}
+
+.journal .journal-entry p
+{
+   color: black;
+}
+
 @import './menu.scss';
 @import './header.scss';
 @import './footer.scss';

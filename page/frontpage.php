@@ -98,7 +98,7 @@
                     if(! empty( $case_posts ) ):
                 ?>
 
-            <div class="cases background"> 
+<div class="cases background"> 
                 <h2> Cases </h2>
                 <div class="containment"> 
                 <?php 
@@ -107,7 +107,7 @@
 
                         <a href="<?php echo get_permalink( $posts->ID ); ?>"> 
                             <div class="case"> 
-                                <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" />
+                                <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" loading="lazy" />
                                 <p> <?php echo get_the_title( $posts->ID ); ?> </p>
                                 <p> <?php echo get_the_excerpt( $posts->ID ); ?> </p>
                             </div>
@@ -118,34 +118,10 @@
                     <?php
                         endforeach; ?> 
                     </div>
-                    </div>
-                <?php wp_reset_postdata(); ?>
-                <?php endif; ?>
+</div>
+    <?php wp_reset_postdata(); ?>
+<?php endif; ?>
 
-            <div class="process"> 
-                <h2> Arbejds processen. </h2>
-                <p> </p>
+<?php
 
-                <div class="process-container"> 
-                    <div> 
-                        <p class="bold"> Planlægning </p>
-                        <p> </p>
-                    </div>
-                    
-                    <div> 
-                        <p class="bold"> Udvikling </p>
-                        <p> </p>
-                    </div>
-
-                    <div> 
-                        <p class="bold"> Accept </p>
-                        <p> </p>
-                    </div>
-
-                    <div> 
-                        <p class="bold"> Modtagelse </p>
-                        <p> </p>
-                    </div>
-                </div>
-
-            </div>
+ ?>
