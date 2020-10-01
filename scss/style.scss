@@ -51,14 +51,14 @@ body
 {
    position: relative;
    width: 100%;
-   height: auto;
+   height: 500px;
    background-color: $background-image-colors;
 }
 
 .cover-image img 
 {
    width: 100% !important;
-   height: 500px;
+   height: auto;
    opacity: 0.45;
    object-fit: cover;
 }
