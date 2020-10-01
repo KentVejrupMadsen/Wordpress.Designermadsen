@@ -25,9 +25,9 @@ if( !function_exists( 'designermadsen_setup_after' ) )
     {
         register_nav_menus( 
             array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
-                'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
-                'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
-                'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) ) );
+                   'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
+                   'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
+                   'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) ) );
 
         
     register_sidebar(
@@ -56,7 +56,6 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
         
     }
 }
-
 
 add_action('after_setup_theme', 'designermadsen_setup_after');
 add_action( 'wp_enqueue_scripts', 'designermadsen_enqueue_scripts' );
