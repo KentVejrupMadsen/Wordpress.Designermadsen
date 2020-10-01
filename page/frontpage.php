@@ -113,8 +113,6 @@
                             </div>
                         </a>
 
-                
-                
                     <?php
                         endforeach; ?> 
                     </div>
