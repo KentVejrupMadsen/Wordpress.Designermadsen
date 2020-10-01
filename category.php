@@ -11,10 +11,12 @@
         the_post();
 ?>
 
-<h2> <?php the_title(); ?> </h2>
-<div> 
-    <?php echo get_the_excerpt(get_the_ID()); ?>
-</div>
+<a href="<?php echo get_permalink() ;  ?>"> 
+    <div> 
+        <h2> <?php the_title(); ?> </h2>
+        <?php echo get_the_excerpt( get_the_ID() ); ?>
+    </div>
+</a>
 
     <?php endwhile; ?>
         </main>
