@@ -149,14 +149,37 @@ body
 
 @media screen and (max-width: 1024px) 
 {
+
+   .sum .containment
+   {
+      
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      grid-template-columns: auto;
+   }
+   
+   .process .process-container
+   {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+      grid-gap: 64px;
+      
+   }
+
    footer .widgets
    {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
 
    }
-   
-}
 
+   
+   #menu-misc
+   {
+      flex-direction: column;
+      
+   }
+}
 
 @import 'bootstrap/bootstrap.scss';
