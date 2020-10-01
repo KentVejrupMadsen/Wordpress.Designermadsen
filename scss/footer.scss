@@ -1,0 +1,27 @@
+
+footer .widgets
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: 32px;
+   color: white;
+
+   padding-top: 32px;
+   padding-bottom: 32px;
+}
+
+footer .widgets .widgetizedArea
+{
+   margin-right: 32px;
+   margin-left: 32px;
+}
+
+.widgetizedArea ul li
+{
+   list-style: none;
+}
+
+.widgetizedArea div ul li
+{
+   list-style: none;
+}

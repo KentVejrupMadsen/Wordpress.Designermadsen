@@ -1,75 +1,50 @@
 $background-image-colors: #2d3436;
 
+.background
+{
+   background-color: $background-image-colors;
+}
+
 body 
 {
    margin:0px;
    padding: 0px;
 }
 
-header 
-{
 
+.cases
+{
+   @extend .py-5;
+   @extend .px-3;
 }
 
-header nav 
-{
-   @extend .navbar;
-   @extend .navbar-expand-lg;
-   @extend .navbar-light;
-   @extend .bg-light;
-   
-}
 
-header nav ul 
-{
-   @extend .navbar-nav;
-   
-}
-
-header nav ul li 
-{
-   @extend .nav-item;
-   
-}
-
-header nav ul a
-{
-   @extend .nav-link;
-   
-}
-
-header nav ul .active a
-{
-   
-   
-}
-
-footer .widgets
+.cases .containment
 {
    display: grid;
    grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 32px;
-   @extend .bg-dark;
-   color: white;
-
-   padding-top: 32px;
-   padding-bottom: 32px;
+   grid-gap: 64px;
 }
 
-footer .widgets .widgetizedArea
+.cases .case
 {
-   margin-right: 32px;
-   margin-left: 32px;
+   display: grid;
+   grid-template-rows: auto auto;
+   grid-gap: 16px;
 }
 
-.widgetizedArea ul li
+
+.cases .case p
 {
-   list-style: none;
+   text-align: center;
+   color:white;
 }
 
-.widgetizedArea div ul li
+.cases .case img
 {
-   list-style: none;
+   width: 100% !important;
+   height: 200px;
+   object-fit: cover;
 }
 
 .cover-image
@@ -100,58 +75,121 @@ footer .widgets .widgetizedArea
   transform: translateY(-50%);
 }
 
-#menu-social-media
+
+.sum 
 {
-   margin: 0px;
-   padding: 0px;
-   display: flex;
-   flex-direction: row;
-   width: 100%;
-   justify-content: center;
+   @extend .py-5;
 }
 
-#menu-social-media li 
+.sum h1 
 {
-   @extend .mx-2;
-   list-style: none !important;
+   text-align: center;
 }
 
-#menu-social-media i 
+.sum p 
 {
-   font-size: 32px !important;
+   text-align: center;
 }
 
-.menu-social-container
+.sum .containment
 {
-   margin: 0px;
-   padding: 0px;
-   display: flex;
-   flex-direction: row;
-   width: 100%;
-   justify-content: center;
+   
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+   grid-gap: 32px;
 }
 
-.menu-social-container li 
+.sum .sum-link
 {
-   @extend .mx-2;
-   list-style: none !important;
+   @extend a;
+   text-decoration: none !important;
 }
 
-.menu-social-container i 
+.sum .sum-link .logo
 {
-   font-size: 32px !important;
+   text-align: center;
+   font-size: 72px;
 }
+
+.bold 
+{
+   font-weight: bold;
+   color:black !important;
+}
+
+.sum .sum-link .description
+{
+   color: black !important;
+}
+
+.process
+{
+   @extend .py-5;
+}
+
+.process h2
+{
+   text-align: center;
+}
+
+.process .process-container
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-rows: auto;
+   grid-gap: 64px;
+   
+}
+
+.process .process-container p
+{
+   text-align: center;
+   
+}
+
+@import './menu.scss';
+@import './header.scss';
+@import './footer.scss';
 
 @media screen and (max-width: 1024px) 
 {
+   .cases .containment
+   { 
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr;  
+   }
+
+   .sum .containment
+   {
+      
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      grid-template-columns: auto;
+   }
+   
+   .process .process-container
+   {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+      grid-gap: 64px;
+      
+   }
+
    footer .widgets
    {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
 
    }
-   
-}
 
+   
+   #menu-misc
+   {
+      flex-direction: column;
+      
+   }
+}
 
 @import 'bootstrap/bootstrap.scss';
