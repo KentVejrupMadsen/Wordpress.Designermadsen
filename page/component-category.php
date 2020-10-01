@@ -1,11 +1,19 @@
+<?php  $cat = get_the_category(); ?>
+
+<?php /*
+<h1> <?php echo $cat[0]->cat_name;  ?> </h1>
+ */ ?>
+ 
 <?php 
-    if(have_posts()):
-        the_posts();
+    while( have_posts() ):
+        the_post();
 ?>
 
-<h2> <?php the_title(); ?> </h2>
-<div> 
-    <?php the_content(); ?>
-</div>
+    <a href="<?php echo get_permalink() ;  ?>"> 
+        <div> 
+            <h2> <?php the_title(); ?> </h2>
+            <?php echo get_the_excerpt( get_the_ID() ); ?>
+        </div>
+    </a>
 
-<?php endif; ?>
+<?php endwhile; ?>

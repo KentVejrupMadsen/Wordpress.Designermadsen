@@ -94,7 +94,9 @@
 
                     if(! empty( $case_posts ) ):
                 ?>
+                
             <div class="cases background"> 
+                <h2> Cases </h2>
                 <?php 
                         foreach( $case_posts as $posts ):
                     ?>
