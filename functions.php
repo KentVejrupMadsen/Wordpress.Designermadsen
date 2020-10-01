@@ -257,6 +257,12 @@ function designermadsen_setup_after()
       add_theme_support( 'post-thumbnails' );
 
       register_menus();  
+
+    // Add custom image size used in Cover Template.
+	add_image_size( 'designermadsen-full', 1980, 9999 );
+	add_image_size( 'designermadsen-midle', 990, 9999 );
+	add_image_size( 'designermadsen-preview', 495, 9999 );
+
 }
 
 function register_menus()
