@@ -94,24 +94,28 @@
 
                     if(! empty( $case_posts ) ):
                 ?>
-                
+
             <div class="cases background"> 
                 <h2> Cases </h2>
+                <div class="containment"> 
                 <?php 
                         foreach( $case_posts as $posts ):
                     ?>
 
-                <a href="<?php echo get_permalink( $posts->ID ); ?>"> 
-                    <div class="case"> 
-                        <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" />
-                        <p> <?php echo get_the_title( $posts->ID ); ?> </p>
-                        <p> <?php echo get_the_excerpt( $posts->ID ); ?> </p>
-                    </div>
-                </a>
+                        <a href="<?php echo get_permalink( $posts->ID ); ?>"> 
+                            <div class="case"> 
+                                <img src="<?php echo get_the_post_thumbnail_url( $posts->ID ); ?>" />
+                                <p> <?php echo get_the_title( $posts->ID ); ?> </p>
+                                <p> <?php echo get_the_excerpt( $posts->ID ); ?> </p>
+                            </div>
+                        </a>
+
                 
-                <?php
-                    endforeach; ?> 
-                </div>
+                
+                    <?php
+                        endforeach; ?> 
+                    </div>
+                    </div>
                 <?php wp_reset_postdata(); ?>
                 <?php endif; ?>
 
