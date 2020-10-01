@@ -4,8 +4,11 @@
             <?php the_post();?>
                         
             <div class="cover-image">
+                <?php //the_post_thumbnail(); 
+                ?> 
 
-                <?php the_post_thumbnail(); ?> 
+                <img src="<?php echo get_the_post_thumbnail_url(); ?>" loading="lazy" />
+
                 <div>
                     <h1> <?php  the_title(); ?> </h1>
                     <p> <?php echo get_bloginfo('description') ?> </p>
