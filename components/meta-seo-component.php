@@ -22,5 +22,5 @@
         <?php $concat_tags = $concat_tags . $tag->name . ', ';  ?>
     <?php endforeach; ?>
 
-    <meta name="keywords" content="<?php echo $concat_tags; ?>"
+    <meta name="keywords" content="<?php echo $concat_tags;?>" />
 <?php endif; ?>
