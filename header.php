@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
-
+        <meta charset="<?php bloginfo( 'charset' );?>">
         <?php 
             wp_head(); 
+            include get_parent_theme_file_path( 'components/robot-component.php' );
         ?>
-        
-        <meta charset="<?php bloginfo( 'charset' );?>">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" 
               content="ie=edge">
-              
-        <link rel="stylesheet" href="<?php echo get_stylesheet_uri() ?>">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
         
+        <?php 
+            include get_parent_theme_file_path( 'components/meta-seo-component.php' );
+        ?>
+
     </head>
     <body>
         <?php 
-            include get_parent_theme_file_path( 'google/tags_body.php' );
+            include get_parent_theme_file_path( 'inc/google/tags_body.php' );
         ?>
 
         <header>

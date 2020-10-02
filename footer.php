@@ -24,8 +24,10 @@
     <?php wp_footer(); ?>
 
     <?php 
-        include get_parent_theme_file_path( 'google/analytics.php' );
-        include get_parent_theme_file_path( 'google/tags.php' );  
+        include get_parent_theme_file_path( 'inc/google/analytics.php' );
+        include get_parent_theme_file_path( 'inc/google/tags.php' );
+
+        include get_parent_theme_file_path( 'inc/framework/footer.php' );  
     ?>
 
 </html>
