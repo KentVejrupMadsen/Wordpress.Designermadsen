@@ -1,6 +1,5 @@
 <?php 
 include get_parent_theme_file_path( 'inc/walkers.php' );
-include get_parent_theme_file_path( 'inc/filters.php' );
 
 $theme = wp_get_theme();
 
@@ -59,9 +58,5 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
 
 add_action('after_setup_theme', 'designermadsen_setup_after');
 add_action( 'wp_enqueue_scripts', 'designermadsen_enqueue_scripts' );
-
-
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-
 
 ?>
