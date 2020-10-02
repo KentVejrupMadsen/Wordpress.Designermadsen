@@ -7,7 +7,3 @@
 <?php 
     get_footer();
 ?>
-
-<script> 
-gtag('set', {'content_group1': 'Wordpress - Category'}); 
-</script>

@@ -8,7 +8,3 @@
 <?php 
     get_footer();
 ?>
-
-<script> 
-gtag('set', {'content_group2': 'Wordpress - Error 404'}); 
-</script>
