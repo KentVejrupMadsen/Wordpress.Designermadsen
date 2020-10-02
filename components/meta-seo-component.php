@@ -17,8 +17,8 @@
 <?php $all_tags = get_the_tags(); 
       $concat_tags = '';
 ?>
-<?php if($all_tags): ?>
-    <?php foreach($all_tags as $tag): ?>
+<?php if( $all_tags ): ?>
+    <?php foreach( $all_tags as $tag ): ?>
         <?php $concat_tags = $concat_tags . $tag->name . ', ';  ?>
     <?php endforeach; ?>
 

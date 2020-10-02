@@ -17,8 +17,10 @@ if( !function_exists( 'designermadsen_setup_after' ) )
 
         // Add custom image size used in Cover Template.
         add_image_size( 'designermadsen-full', 1980, 9999 );
-        add_image_size( 'designermadsen-midle', 990, 9999 );
+        add_image_size( 'designermadsen-middle', 990, 9999 );
+        
         add_image_size( 'designermadsen-preview', 495, 9999 );
+        add_image_size( 'designermadsen-preview-hd', 720, 9999 );
 
     }
 
