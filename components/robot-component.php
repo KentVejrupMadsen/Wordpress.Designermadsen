@@ -3,7 +3,7 @@
 <?php 
     $robot_txt = get_field("_command");
 ?>
-    <?php if($robot_txt): ?>
+    <?php if( $robot_txt ): ?>
         <meta name="robots" content="<?php echo $robot_txt; ?>" /> 
     <?php endif; ?>
 

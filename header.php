@@ -5,6 +5,7 @@
         <?php 
             wp_head(); 
             include get_parent_theme_file_path( 'components/robot-component.php' );
+            include get_parent_theme_file_path( 'components/meta-seo-component.php' );
         ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" 
