@@ -18,9 +18,14 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         // Add custom image size used in Cover Template.
         add_image_size( 'designermadsen-full', 1980, 9999 );
         add_image_size( 'designermadsen-middle', 990, 9999 );
-        
-        add_image_size( 'designermadsen-preview', 495, 100 );
+        add_image_size( 'designermadsen-preview', 495, 9999 );
         add_image_size( 'designermadsen-preview-hd', 720, 9999 );
+
+        the_post_thumbnail('thumbnail');       // Thumbnail (default 150px x 150px max)
+        the_post_thumbnail('medium');          // Medium resolution (default 300px x 300px max)
+        the_post_thumbnail('medium_large');    // Medium Large resolution (default 768px x 0px max)
+        the_post_thumbnail('large');           // Large resolution (default 1024px x 1024px max)
+        the_post_thumbnail('full'); 
 
     }
 
