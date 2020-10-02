@@ -11,6 +11,8 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
 
+        add_shortcode( 'shortcodename', 'get_search_form');
+
         register_menus();  
 
         // Add custom image size used in Cover Template.
