@@ -165,7 +165,7 @@ body
 .post img
 {
    width: 100%;
-   height: auto;
+   max-height: 350px !important;
    opacity: 0.8;
    object-fit: cover;
 }
@@ -265,6 +265,12 @@ body
 
 @media screen and (max-width: 1024px) 
 {
+   .posts-container 
+   {
+      grid-template-columns: auto !important;
+      grid-template-rows: auto auto auto auto !important;
+   }
+
    .cases .containment
    { 
       grid-template-rows: auto auto auto;
@@ -275,8 +281,8 @@ body
    {
       
       display: grid;
-      grid-template-rows: auto auto auto auto;
-      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
    }
    
    .process .process-container
