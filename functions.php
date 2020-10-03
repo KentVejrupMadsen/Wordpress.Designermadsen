@@ -61,6 +61,9 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                         null, 
                         null );
 
+        //wp_enqueue_script('vue-js',  'https://it.vuejs.org/js/vue.js', false);
+        //wp_enqueue_script('sidebar',  get_template_directory_uri() . '/sidebar.js', false);
+        
         
     }
 }

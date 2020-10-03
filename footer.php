@@ -1,4 +1,4 @@
-        <footer> 
+        <footer id="footer-area"> 
             <nav class="widgets background"> 
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer Widget Area") ) : ?>
                 <?php endif;?>
@@ -20,6 +20,8 @@
                 ?>
             <?php endif; ?>
         </footer>
+        
+        <?php get_sidebar(); ?>
     </body> 
     <?php wp_footer(); ?>
 
@@ -29,5 +31,8 @@
 
         include get_parent_theme_file_path( 'inc/framework/footer.php' );  
     ?>
+
+    <script src="https://it.vuejs.org/js/vue.js"> </script>
+    <script src="<?php echo get_template_directory_uri() . '/sidebar.js'; ?>"> </script>
 
 </html>
