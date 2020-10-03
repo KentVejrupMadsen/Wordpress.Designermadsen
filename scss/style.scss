@@ -143,6 +143,16 @@ body
    grid-gap:0px;
 }
 
+.posts 
+{
+   @extend .py-5;
+}
+
+.posts h2
+{
+   text-align: center !important;
+}
+
 .post 
 {
    background: #1e3c72; /* fallback for old browsers */
@@ -156,7 +166,14 @@ body
 {
    width: 100%;
    height: auto;
-   opacity: 0.6;
+   opacity: 0.8;
+   object-fit: cover;
+}
+
+.button
+{
+   @extend .btn;
+   @extend .btn-primary;
 }
 
 .post .post-page
