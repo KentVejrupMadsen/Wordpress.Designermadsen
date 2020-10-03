@@ -1,4 +1,4 @@
-        <footer> 
+        <footer id="footer-area"> 
             <nav class="widgets background"> 
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer Widget Area") ) : ?>
                 <?php endif;?>
@@ -20,18 +20,19 @@
                 ?>
             <?php endif; ?>
         </footer>
+        
+        <?php get_sidebar(); ?>
     </body> 
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177101450-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-177101450-1');
-    </script>
-
-
     <?php wp_footer(); ?>
+
+    <?php 
+        include get_parent_theme_file_path( 'inc/google/analytics.php' );
+        include get_parent_theme_file_path( 'inc/google/tags.php' );
+
+        include get_parent_theme_file_path( 'inc/framework/footer.php' );  
+    ?>
+
+    <script src="https://it.vuejs.org/js/vue.js"> </script>
+    <script src="<?php echo get_template_directory_uri() . '/sidebar.js'; ?>"> </script>
+
 </html>

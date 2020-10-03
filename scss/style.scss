@@ -7,6 +7,7 @@ $background-image-colors: #2d3436;
 
 body 
 {
+   position: relative;
    margin:0px;
    padding: 0px;
 }
@@ -34,6 +35,13 @@ body
 }
 
 
+.cases h2
+{
+   color:white;
+   text-align: center;
+}
+
+
 .cases .case p
 {
    text-align: center;
@@ -43,7 +51,7 @@ body
 .cases .case img
 {
    width: 100% !important;
-   height: 200px;
+   height: auto;
    object-fit: cover;
 }
 
@@ -75,6 +83,33 @@ body
   transform: translateY(-50%);
 }
 
+#sidebar
+{
+   position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: flex-end;
+   height: 100%;
+   width: 75px;
+
+   right: 0px;
+   top:0px;
+}
+
+#scroll-button
+{
+   height: 50px;
+   width: 50px;
+   background-color: $background-image-colors;
+   color: white;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 32px;
+
+   cursor: pointer;
+}
 
 .sum 
 {
@@ -98,6 +133,62 @@ body
    grid-template-columns: 1fr 1fr 1fr 1fr;
    
    grid-gap: 32px;
+}
+
+.posts-container 
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   grid-gap:0px;
+}
+
+.posts 
+{
+   @extend .py-5;
+}
+
+.posts h2
+{
+   text-align: center !important;
+}
+
+.post 
+{
+   background: #1e3c72; /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #1e3c72, #2a5298); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #1e3c72, #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   color: white;
+}
+
+.post img
+{
+   width: 100%;
+   max-height: 350px !important;
+   opacity: 0.8;
+   object-fit: cover;
+}
+
+.button
+{
+   @extend .btn;
+   @extend .btn-primary;
+}
+
+.post .post-page
+{
+   position: relative;
+}
+
+.post div .text-container
+{
+   width: 100%;
+   @extend .py-4;
+   @extend .px-2;
+   
+   position: absolute;
+   top: 0px;
 }
 
 .sum .sum-link
@@ -148,12 +239,38 @@ body
    
 }
 
+.journal
+{
+   display: grid;
+   grid-template-columns: auto auto;
+   grid-template-rows: auto;
+}
+
+.journal .journal-entry
+{
+   @extend .py-2;
+   @extend .px-4;
+   
+   text-decoration: none;
+}
+
+.journal .journal-entry p
+{
+   color: black;
+}
+
 @import './menu.scss';
 @import './header.scss';
 @import './footer.scss';
 
 @media screen and (max-width: 1024px) 
 {
+   .posts-container 
+   {
+      grid-template-columns: auto !important;
+      grid-template-rows: auto auto auto auto !important;
+   }
+
    .cases .containment
    { 
       grid-template-rows: auto auto auto;
@@ -164,8 +281,8 @@ body
    {
       
       display: grid;
-      grid-template-rows: auto auto auto auto;
-      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
    }
    
    .process .process-container

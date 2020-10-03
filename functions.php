@@ -1,6 +1,5 @@
 <?php 
 include get_parent_theme_file_path( 'inc/walkers.php' );
-include get_parent_theme_file_path( 'inc/filters.php' );
 
 $theme = wp_get_theme();
 
@@ -12,12 +11,21 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
 
+        add_shortcode( 'shortcodename', 'get_search_form');
+
         register_menus();  
 
         // Add custom image size used in Cover Template.
-        add_image_size( 'designermadsen-full', 1980, 9999 );
-        add_image_size( 'designermadsen-midle', 990, 9999 );
-        add_image_size( 'designermadsen-preview', 495, 9999 );
+        add_image_size( 'designermadsen-image-full', 1980, 9999 );
+        add_image_size( 'designermadsen-image-middle', 990, 9999 );
+        add_image_size( 'designermadsen-image-preview', 495, 9999 );
+        add_image_size( 'designermadsen-image-preview-hd', 720, 9999 );
+
+        the_post_thumbnail('designermadsen-thumb-thumbnail');       // Thumbnail (default 150px x 150px max)
+        the_post_thumbnail('designermadsen-thumb-medium');          // Medium resolution (default 300px x 300px max)
+        the_post_thumbnail('designermadsen-thumb-medium_large');    // Medium Large resolution (default 768px x 0px max)
+        the_post_thumbnail('designermadsen-thumb-large');           // Large resolution (default 1024px x 1024px max)
+        the_post_thumbnail('designermadsen-thumb-full'); 
 
     }
 
@@ -53,15 +61,14 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                         null, 
                         null );
 
+        //wp_enqueue_script('vue-js',  'https://it.vuejs.org/js/vue.js', false);
+        //wp_enqueue_script('sidebar',  get_template_directory_uri() . '/sidebar.js', false);
+        
         
     }
 }
 
 add_action('after_setup_theme', 'designermadsen_setup_after');
 add_action( 'wp_enqueue_scripts', 'designermadsen_enqueue_scripts' );
-
-
-add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
-
 
 ?>
