@@ -1,7 +1,7 @@
 <?php if( has_post_thumbnail() ): ?>
-    <?php if( is_frontpage() ): ?>
+    <?php if( is_front_page() ): ?>
         <div class="cover-image">
-        
+
             <?php if( wp_is_mobile() ): ?>
                 <?php the_post_thumbnail('designermadsen-thumb-medium_large'); ?>
             <?php else:?>
