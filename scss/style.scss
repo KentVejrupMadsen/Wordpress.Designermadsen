@@ -17,21 +17,42 @@ body
 {
    @extend .py-5;
    @extend .px-3;
+   @extend .background;
 }
 
-
-.cases .containment
+.cases .cases-containment
 {
    display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: 64px;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-gap: 32px;
 }
 
 .cases .case
 {
-   display: grid;
-   grid-template-rows: auto auto;
-   grid-gap: 16px;
+   @extend .background;
+   position: relative;
+}
+
+.cases .case:hover img
+{
+   opacity: 0.3;
+}
+
+.cases .case h3
+{
+   color: white;
+   position: absolute;
+   text-align: center;
+   width: 100%;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   opacity: 0;
+}
+
+.cases .case:hover h3
+{
+   opacity: 1.0;
 }
 
 

@@ -12,7 +12,6 @@
 
     if ( !empty($query_post->have_posts()) ):
 ?>  
-
 <div class="posts">
     <h2> 
         Posts 
@@ -42,6 +41,6 @@
         ?>
     </div>
 </div>
-<?php endif; ?>
+<?php   endif; ?>
 
 <?php wp_reset_postdata(); ?>
