@@ -36,4 +36,6 @@
     <script src="https://it.vuejs.org/js/vue.js"> </script>
     <script src="<?php echo get_template_directory_uri() . '/type/javascript/sidebar.js'; ?>"> </script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
+
 </html>
