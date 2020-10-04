@@ -9,12 +9,12 @@ var scrollButton = new Vue({
         {
             if( this.down ) 
             {
-                console.log('Scroll down');
+                //console.log('Scroll down');
                 this.goDown();
             }  
             else
             {
-                console.log('Scroll Up');
+                //console.log('Scroll Up');
                 this.goUp();
             }
         },
@@ -24,7 +24,7 @@ var scrollButton = new Vue({
             elm = document.getElementById('footer-area');
             elm.scrollIntoView();
         },
-
+        
         goUp: function( event )
         {
             window.scrollTo(0, 0);
@@ -38,7 +38,7 @@ var scrollButton = new Vue({
             get: function()
             {
                 this.currentYpos = window.scrollY;
-                console.log( this.currentYpos );
+                //console.log( this.currentYpos );
 
                 if( this.currentYpos > ( window.innerHeight/2 ))
                 {
@@ -55,8 +55,10 @@ var scrollButton = new Vue({
     }
   });
 
-window.addEventListener('scroll', function()
-{
-    scrollButton.update; 
-});
+window.addEventListener( 'scroll', 
+    function()
+    {
+        scrollButton.update; 
+    }
+);
 

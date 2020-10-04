@@ -13,6 +13,7 @@
     <a class="journal-entry" href="<?php echo get_permalink() ;  ?>"> 
         <div> 
             <h2> <?php the_title(); ?> </h2>
+            
             <p>
                 <?php echo get_the_date(); ?>
                 -

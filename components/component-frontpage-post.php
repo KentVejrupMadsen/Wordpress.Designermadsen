@@ -1,19 +1,17 @@
 <?php 
 /* */
+    $post_post_arg = array(
+        'posts_per_page' => 4, 
+        'orderby' => 'post_date',
+        'order' => 'desc',
+        'post_type' => 'post', 
+        'post_status' => 'publish'
+    );
 
-$post_arg = array(
-    'posts_per_page' => 4, 
-    'orderby' => 'post_date',
-    'order' => 'desc',
-    'post_type' => 'post', 
-    'post_status' => 'publish'
-);
+    $query_post = new WP_Query( $post_post_arg );
 
-$query = new WP_Query( $post_arg );
-
-if ( $query->have_posts() ) :
+    if ( !empty($query_post->have_posts()) ):
 ?>  
-
 <div class="posts">
     <h2> 
         Posts 
@@ -21,15 +19,15 @@ if ( $query->have_posts() ) :
                 
     <div class="posts-container"> 
         <?php 
-                while ( $query->have_posts() ) : $query->the_post();
+            while ( $query_post->have_posts() ) : $query_post->the_post();
         ?>
             <a class="post" href="<?php echo get_permalink(); ?>">
                 <div class="post-page">
 
                     <?php if( has_post_thumbnail() ): ?>
-                                <?php the_post_thumbnail( 'designermadsen-thumb-medium_large' ); ?>
+                        <?php the_post_thumbnail( 'designermadsen-thumb-medium_large' ); ?>
                     <?php else: ?>
-                                
+                        <?php // Implememt fallback method at some point ?>
                     <?php endif; ?>
 
                     <div class="text-container">
@@ -39,10 +37,10 @@ if ( $query->have_posts() ) :
                 </div>
             </a>
         <?php
-                endwhile;
+            endwhile;
         ?>
     </div>
-    
-    <?php wp_reset_postdata(); ?>
 </div>
-<?php endif; ?>
+<?php   endif; ?>
+
+<?php wp_reset_postdata(); ?>
