@@ -1,10 +1,14 @@
 <?php 
+
+$page_case = get_page_by_title( 'portfolio' );
+
 $post_cases_arg = array(
     'posts_per_page' => 4, 
     'orderby' => 'post_date',
     'order' => 'desc',
-    'post_type' => 'post', 
-    'post_status' => 'publish'
+    'post_type' => 'page', 
+    'post_status' => 'publish',
+    'post_parent'=>$page_case->ID
 );
 
 $query_cases = new WP_Query( $post_cases_arg );
