@@ -2,6 +2,7 @@
 //  
 $page_opgaver = get_page_by_title( 'opgaver' );
 
+
 if( empty( $page_opgaver ) )
 { 
     $page_opgaver = get_page_by_title( 'tasks' );        
@@ -10,7 +11,8 @@ if( empty( $page_opgaver ) )
 // ---------------------------------------------------------------------------------------------
 if( !empty( $page_opgaver ) ): ?>
     <div class="tasks"> 
-        <h2> Tasks </h2>
+        <h2> <?php echo get_the_title( $page_opgaver->ID ); ?> </h2>
+        <p> <?php echo get_the_excerpt( $page_opgaver->ID ); ?> </p>
 
         <div class="tasks-containment"> 
 
