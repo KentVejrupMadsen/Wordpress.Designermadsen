@@ -162,7 +162,7 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     
     $object = $item->object;
     $type = $item->type;
-    $title = $item->title;
+    $title = '<i class="fas fa-link"></i>';
     $description = $item->description;
     $permalink = $item->url;
 
@@ -176,14 +176,29 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     //Add SPAN if no Permalink
     if( $permalink && $permalink != '#' ) 
     {
-        
-        if(in_array("menu-item-has-children", $item->classes, true))
+        if( !in_array( "menu-item-has-children", $item->classes, true ) )
         {
             $output .= "<a class='' href='" . $permalink . "'>";
-        }
-        else 
-        {
-            $output .= "<a class='' href='" . $permalink . "'>";
+
+            try 
+            {
+                $parsed_url = parse_url( $permalink );
+                
+                if( $parsed_url['host'] === 'github.com' )
+                {
+                    $title = '<i class="fab fa-github"></i>';
+                }
+
+                if( $parsed_url['host'] === 'www.linkedin.com' )
+                {
+                    $title = '<i class="fab fa-linkedin"></i>';
+                }
+
+            }
+            catch(Exception $e)
+            {
+
+            }
         }
     } 
     else 
@@ -192,6 +207,7 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
     }
     
     $output .= $title;
+
     if( $description != '' && $depth == 0 ) 
     {
         $output .= '<small class="description">' . $description . '</small>';
