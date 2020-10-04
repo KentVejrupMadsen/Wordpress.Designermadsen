@@ -210,7 +210,7 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
                 }
 
             }
-            catch(Exception $e)
+            catch( Exception $e )
             {
 
             }
