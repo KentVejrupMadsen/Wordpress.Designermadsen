@@ -1,6 +1,6 @@
 <?php 
 
-$page_case = get_page_by_title( 'portfolio' );
+$page_case = get_page_by_title( 'Portfolio' );
 
 $post_cases_arg = array(
     'posts_per_page' => 4, 
