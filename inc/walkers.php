@@ -204,6 +204,11 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
                     $title = '<i class="fab fa-twitter-square"></i>';
                 }
 
+                if( $parsed_url['host'] === 'www.tumblr.com' )
+                {
+                    $title = '<i class="fab fa-tumblr-square"></i>';
+                }
+
             }
             catch(Exception $e)
             {
