@@ -1,6 +1,6 @@
 <?php 
 /* */
-    $post_arg = array(
+    $post_post_arg = array(
         'posts_per_page' => 4, 
         'orderby' => 'post_date',
         'order' => 'desc',
@@ -8,9 +8,9 @@
         'post_status' => 'publish'
     );
 
-    $query = new WP_Query( $post_arg );
+    $query_post = new WP_Query( $post_post_arg );
 
-    if ( $query->have_posts() ) :
+    if ( !empty($query_post->have_posts()) ):
 ?>  
 
 <div class="posts">
@@ -20,7 +20,7 @@
                 
     <div class="posts-container"> 
         <?php 
-            while ( $query->have_posts() ) : $query->the_post();
+            while ( $query_post->have_posts() ) : $query_post->the_post();
         ?>
             <a class="post" href="<?php echo get_permalink(); ?>">
                 <div class="post-page">

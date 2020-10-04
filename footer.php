@@ -23,6 +23,7 @@
         
         <?php get_sidebar(); ?>
     </body> 
+    
     <?php wp_footer(); ?>
 
     <?php 
@@ -33,6 +34,6 @@
     ?>
 
     <script src="https://it.vuejs.org/js/vue.js"> </script>
-    <script src="<?php echo get_template_directory_uri() . '/sidebar.js'; ?>"> </script>
+    <script src="<?php echo get_template_directory_uri() . '/type/javascript/sidebar.js'; ?>"> </script>
 
 </html>
