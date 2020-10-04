@@ -24,7 +24,7 @@ var scrollButton = new Vue({
             elm = document.getElementById('footer-area');
             elm.scrollIntoView();
         },
-
+        
         goUp: function( event )
         {
             window.scrollTo(0, 0);
