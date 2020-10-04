@@ -10,6 +10,9 @@ if( empty( $page_opgaver ) )
 // ---------------------------------------------------------------------------------------------
 if( !empty( $page_opgaver ) ): ?>
     <div class="tasks"> 
+        <h2> Tasks </h2>
+
+        <div class="tasks-containment"> 
 
     <?php
     $post_opgaver_arg = array(
@@ -38,6 +41,8 @@ if( !empty( $page_opgaver ) ): ?>
         endwhile;
     endif;
 ?>
+
+        </div>
     </div>
 <?php
 endif; 
