@@ -194,6 +194,16 @@ function start_el( &$output, $item, $depth=0, $args=array(), $id = 0 )
                     $title = '<i class="fab fa-linkedin"></i>';
                 }
 
+                if( $parsed_url['host'] === 'www.facebook.com' )
+                {
+                    $title = '<i class="fab fa-facebook-square"></i>';
+                }
+
+                if( $parsed_url['host'] === 'twitter.com' )
+                {
+                    $title = '<i class="fab fa-twitter-square"></i>';
+                }
+
             }
             catch(Exception $e)
             {
