@@ -35,10 +35,12 @@ if( !function_exists( 'designermadsen_setup_after' ) )
 
 function initialise_menu()
     {
-        $locations = array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
-                            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
-                            'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
-                            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) );
+        $locations = array( 
+            'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
+            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
+            'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
+            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) 
+        );
 
         register_nav_menus( $locations );
                             
