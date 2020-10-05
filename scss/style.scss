@@ -12,12 +12,11 @@
 #relavant
 {
     width: 100%;
-    @extend .background;
 }
 
 #relavant h2
 {
-    color: white;
+    color: black;
     
     @extend .py-3;
     text-align: center;
@@ -25,7 +24,6 @@
 
 #relavant .containment
 {
-    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
@@ -37,6 +35,11 @@
     @extend .my-2;
     @extend .mx-4;
     text-decoration: none;
+}
+
+#relavant .containment a p
+{
+    color: black;
 }
 
 @media screen and (max-width: 1024px) 
