@@ -117,6 +117,12 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                                1.0, 
                                true );
 
+            wp_enqueue_script( 'more',  
+                               (get_template_directory_uri() . '/type/javascript/more.js'), 
+                               array('vue-js'), 
+                               1.0, 
+                               true );
+
         }
         
     }
