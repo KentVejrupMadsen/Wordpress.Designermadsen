@@ -2,7 +2,7 @@
     get_header(); 
 ?>    
         <main> 
-            <p> 404 </p>
+            <h2> 404 </h2>
             <p> Page not found </p>
         </main>
 <?php 

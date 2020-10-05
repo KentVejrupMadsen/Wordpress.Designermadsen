@@ -3,7 +3,7 @@
     <?php if( is_front_page() ): ?>
         <?php // is frontpage ?>
         <?php include 'frontpage.php' ?>
-
+        
     <?php else: ?>
         <?php // is a post ?>
         <?php if( is_singular() ): ?>

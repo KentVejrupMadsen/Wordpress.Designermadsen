@@ -1,0 +1,17 @@
+
+.button
+{
+   @extend .btn;
+   @extend .btn-primary;
+}
+
+
+.bold 
+{
+   font-weight: bold;
+}
+
+.background
+{
+   background-color: $background-image-colors;
+}

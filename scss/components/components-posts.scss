@@ -1,0 +1,60 @@
+.posts-container 
+{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: 1fr 1fr;
+   grid-gap:0px;
+}
+
+.posts 
+{
+   @extend .py-5;
+}
+
+.posts h2
+{
+   text-align: center !important;
+}
+
+.post 
+{
+   background: #1e3c72; /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #1e3c72, #2a5298); /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #1e3c72, #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+   color: white;
+}
+
+.post img
+{
+   width: 100%;
+   max-height: 350px !important;
+   opacity: 0.54;
+   object-fit: cover;
+}
+
+
+.post .post-page
+{
+   position: relative;
+}
+
+.post div .text-container
+{
+   width: 100%;
+   @extend .py-4;
+   @extend .px-2;
+   
+   position: absolute;
+   top: 0px;
+}
+
+@media screen and (max-width: 1024px) 
+{
+   .posts-container 
+   {
+      grid-template-columns: auto !important;
+      grid-template-rows: auto auto auto auto !important;
+   }
+}
+
