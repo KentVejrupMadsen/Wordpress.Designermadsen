@@ -2,7 +2,7 @@ var scrollButton = new Vue({
     el: '#scroll-button',
     data: {
         down:true,
-        is_active: true,
+        is_active: false,
         currentYpos: 0
     },
     methods: {
@@ -53,6 +53,11 @@ var scrollButton = new Vue({
 
         }
 
+    },
+    created: function()
+    {
+        console.log("loaded scroll button");   
+        this.is_active = true;
     }
   });
 

@@ -37,9 +37,9 @@ function initialise_menu()
     {
         $locations = array( 
             'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
-            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
+            'misc-menu'   => __( 'Misc. Area Menu', 'theme-menu' ), 
             'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
-            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) 
+            'misc-menu'   => __( 'Misc. Area Menu', 'theme-menu' ) 
         );
 
         register_nav_menus( $locations );
@@ -50,11 +50,11 @@ function initialise_sidebar()
 {
     register_sidebar(
         array(
-            'name' => 'Footer Widget Area',
+            'name'          => 'Footer Widget Area',
             'before_widget' => '<div class = "widgetizedArea">',
-            'after_widget' => '</div>',
-            'before_title' => '<h3>',
-            'after_title' => '</h3>',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3>',
+            'after_title'   => '</h3>',
     ) );
 }
 
@@ -81,11 +81,35 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
     {
         if( !isset( $is_debugging ) && ( !$is_debugging ) )
         {
-            wp_enqueue_script( 'vue-js',  'https://vuejs.org/js/vue.min.js', array(), 3.0, true );
-            wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js', array(), 3.5, true);
-            wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js', array(), 0.2, true);
+            wp_enqueue_script( 'vue-js',  
+                               'https://vuejs.org/js/vue.min.js', 
+                               array(), 
+                               3.0, 
+                               true );
 
-            wp_enqueue_script( 'sidebar',  (get_template_directory_uri() . '/type/javascript/sidebar.js'), array('vue-js'), 1.0, true );
+            wp_enqueue_script( 'jquery', 
+                               'https://code.jquery.com/jquery-3.5.1.slim.min.js', 
+                               array(), 
+                               3.5, 
+                               true );
+
+            wp_enqueue_script( 'axios', 
+                               'https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js', 
+                               array(), 
+                               0.2, 
+                               true);
+
+            wp_enqueue_script( 'cookie-policy',  
+                               (get_template_directory_uri() . '/type/javascript/cookie-policy.js'), 
+                               array('vue-js'), 
+                               1.0, 
+                               true );
+
+            wp_enqueue_script( 'sidebar',  
+                               (get_template_directory_uri() . '/type/javascript/sidebar.js'), 
+                               array('vue-js'), 
+                               1.0, 
+                               true );
 
         }
         
