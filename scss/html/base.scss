@@ -1,0 +1,12 @@
+body 
+{
+   position: relative;
+   margin:0px;
+   padding: 0px;
+}
+
+@import './header.scss';
+@import './footer.scss';
+
+@import './headings.scss';
+@import './paragraphs.scss';

@@ -1,6 +1,6 @@
 <div id="sidebar"> 
     <div>
-        <div id="scroll-button" v-on:click="currentState()"> 
+        <div class="not-active" id="scroll-button" v-on:click="currentState()" v-bind:class="{ active:is_active }"> 
             <span v-if="down">  
                 <i class="fas fa-chevron-down"></i>
             </span>

@@ -1,0 +1,19 @@
+.not-active
+{
+   visibility: hidden;
+}
+
+.active 
+{
+   visibility: visible !important;
+}
+
+.hidden-on-desktop
+{
+   visibility: hidden;
+}
+
+.hidden-on-mobile
+{
+   visibility: visible;
+}

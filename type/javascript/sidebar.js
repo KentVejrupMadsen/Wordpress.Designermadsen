@@ -2,6 +2,7 @@ var scrollButton = new Vue({
     el: '#scroll-button',
     data: {
         down:true,
+        is_active: true,
         currentYpos: 0
     },
     methods: {

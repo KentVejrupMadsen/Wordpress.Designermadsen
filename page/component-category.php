@@ -1,10 +1,7 @@
 <?php  $cat = get_the_category(); ?>
 
-<?php /*
-<h1> <?php echo $cat[0]->cat_name;  ?> </h1>
- */ ?>
- 
- <div class="journal"> 
+
+<div class="journal"> 
 <?php 
     while( have_posts() ):
         the_post();

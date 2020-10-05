@@ -25,3 +25,23 @@ footer .widgets .widgetizedArea
 {
    list-style: none;
 }
+
+
+@media screen and (max-width: 1024px) 
+{
+
+
+   footer .widgets
+   {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+
+   }
+
+   
+   #menu-misc
+   {
+      flex-direction: column;
+      
+   }
+}
