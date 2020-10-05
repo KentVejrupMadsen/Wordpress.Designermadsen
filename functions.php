@@ -63,10 +63,10 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
     function designermadsen_enqueue_scripts()
     {
         wp_enqueue_style( 'style', 
-                        get_stylesheet_uri(), 
-                        null, 
-                        null, 
-                        null );
+                          get_stylesheet_uri(), 
+                          null, 
+                          1.0, 
+                          null );
 
         if( !isset( $is_debugging ) && ( !$is_debugging ) )
         {
