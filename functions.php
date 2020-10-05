@@ -105,8 +105,14 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                                1.0, 
                                true );
 
-            wp_enqueue_script( 'sidebar',  
-                               (get_template_directory_uri() . '/type/javascript/sidebar.js'), 
+            wp_enqueue_script( 'scroll',  
+                               (get_template_directory_uri() . '/type/javascript/scroll.js'), 
+                               array('vue-js'), 
+                               1.0, 
+                               true );
+
+             wp_enqueue_script( 'mobile-menu',  
+                               (get_template_directory_uri() . '/type/javascript/mobile-menu.js'), 
                                array('vue-js'), 
                                1.0, 
                                true );
