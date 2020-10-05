@@ -1,4 +1,4 @@
-var cookiePolicyHandler = new Vue(
+var mobileMenuButton = new Vue(
     {
         el: '#mobile-menu-button',
         data: 
