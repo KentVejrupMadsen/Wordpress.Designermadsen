@@ -13,5 +13,9 @@
 
         </div>
 
-     <a class="button" v-on:click="more"> More </a>
+        <div class="align-center"> 
+            
+               <a class="button" v-on:click="more"> More </a>
+            
+        </div>
 </div>
