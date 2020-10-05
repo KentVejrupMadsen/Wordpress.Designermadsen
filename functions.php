@@ -1,6 +1,8 @@
 <?php 
 include get_parent_theme_file_path( 'inc/walkers.php' );
 
+$is_debugging=true;
+
 $theme = wp_get_theme();
 
 if( !function_exists( 'designermadsen_setup_after' ) )
@@ -10,8 +12,6 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         /* Adds support for wordpress to handle setting the title  */
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
-
-        add_shortcode( 'shortcodename', 'get_search_form');
 
         register_menus();  
 
@@ -61,9 +61,15 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                         null, 
                         null );
 
-        //wp_enqueue_script('vue-js',  'https://it.vuejs.org/js/vue.js', false);
-        //wp_enqueue_script('sidebar',  get_template_directory_uri() . '/sidebar.js', false);
-        
+        if( !isset( $is_debugging ) && ( !$is_debugging ) )
+        {
+            wp_enqueue_script( 'vue-js',  'https://vuejs.org/js/vue.min.js', array(), 3.0, true );
+            wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js', array(), 3.5, true);
+            wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js', array(), 0.2, true);
+
+            wp_enqueue_script( 'sidebar',  (get_template_directory_uri() . '/type/javascript/sidebar.js'), array('vue-js'), 1.0, true );
+
+        }
         
     }
 }

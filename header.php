@@ -10,6 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" 
               content="ie=edge">
+              
+        <!-- Font's Used -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
 
         
         <?php 
