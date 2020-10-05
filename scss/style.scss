@@ -74,9 +74,15 @@
 
 .page-about-container .wp-block-group
 {
+    grid-row: span 2;
     @extend .py-4;
     @extend .px-2;
-    
+
+}
+
+.page-about-container .sharedaddy
+{
+    grid-column: span 2;
 }
 
 @media screen and (max-width: 1024px) 
