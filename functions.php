@@ -1,9 +1,8 @@
 <?php 
+include get_parent_theme_file_path( 'inc/framework/kirki/kirki.php' );
 include get_parent_theme_file_path( 'inc/walkers.php' );
 
 $is_debugging=true;
-
-$theme = wp_get_theme();
 
 if( !function_exists( 'designermadsen_setup_after' ) )
 {
@@ -12,8 +11,11 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         /* Adds support for wordpress to handle setting the title  */
         add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
-
-        register_menus();  
+        
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support( 'automatic-feed-links' );
+        // Add support for responsive embeds.
+	    add_theme_support( 'responsive-embeds' );
 
         // Add custom image size used in Cover Template.
         add_image_size( 'designermadsen-image-full', 1980, 9999 );
@@ -21,23 +23,28 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         add_image_size( 'designermadsen-image-preview', 495, 9999 );
         add_image_size( 'designermadsen-image-preview-hd', 720, 9999 );
 
-        the_post_thumbnail(array(75, 75));      
-        the_post_thumbnail(array(300, 300));          
-        the_post_thumbnail(array(768, 768));   
-        the_post_thumbnail(array(1024, 1024));           
+        the_post_thumbnail( array(75, 75) );      
+        the_post_thumbnail( array(300, 300) );          
+        the_post_thumbnail( array(768, 768) );   
+        the_post_thumbnail( array(1024, 1024) );           
         the_post_thumbnail(); 
 
     }
+}
 
-    function register_menus()
+function initialise_menu()
     {
-        register_nav_menus( 
-            array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
-                   'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
-                   'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
-                   'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) ) );
+        $locations = array( 'header-menu' => __( 'Header Main Area Menu', 'theme-menu' ),
+                            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ), 
+                            'social-menu' => __( 'Social Area Menu', 'theme-menu' ),
+                            'misc-menu' => __( 'Misc. Area Menu', 'theme-menu' ) );
 
-        
+        register_nav_menus( $locations );
+                            
+    }
+
+function initialise_sidebar()
+{
     register_sidebar(
         array(
             'name' => 'Footer Widget Area',
@@ -46,10 +53,7 @@ if( !function_exists( 'designermadsen_setup_after' ) )
             'before_title' => '<h3>',
             'after_title' => '</h3>',
     ) );
-                                
-    }
 }
-
 
 if( !function_exists( 'designermadsen_enqueue_scripts' ) )
 {
@@ -73,6 +77,9 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
         
     }
 }
+
+add_action( 'init', 'initialise_menu' );
+add_action( 'widgets_init', 'initialise_sidebar' );
 
 add_action('after_setup_theme', 'designermadsen_setup_after');
 add_action( 'wp_enqueue_scripts', 'designermadsen_enqueue_scripts' );
