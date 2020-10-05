@@ -56,6 +56,27 @@
     color: black;
 }
 
+.page-container 
+{
+    @extend .container;
+    @extend .py-4;
+}
+
+.page-about-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0px;
+}
+
+.page-about-container .wp-block-group
+{
+    @extend .py-4;
+
+    @extend .px-2;
+}
+
 @media screen and (max-width: 1024px) 
 {
     #relavant .containment

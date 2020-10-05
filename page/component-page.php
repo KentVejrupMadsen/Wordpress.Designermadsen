@@ -2,7 +2,7 @@
 <?php include get_parent_theme_file_path('components/areas/cover.php'); ?>
 
 <!-------------------------->
-<div> 
+<div class="page-container"> 
     <?php the_content(); ?>
 </div>
 
