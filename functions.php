@@ -1,8 +1,9 @@
 <?php 
 include get_parent_theme_file_path( 'inc/framework/kirki/kirki.php' );
-include get_parent_theme_file_path( 'inc/walkers.php' );
 
-$is_debugging=true;
+include get_parent_theme_file_path( 'components/menu/walkers.php' );
+
+$is_debugging = true;
 
 if( !function_exists( 'designermadsen_setup_after' ) )
 {

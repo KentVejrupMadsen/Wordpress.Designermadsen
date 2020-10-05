@@ -4,6 +4,7 @@
         <meta charset="<?php bloginfo( 'charset' );?>">
         <?php 
             wp_head(); 
+
             include get_parent_theme_file_path( 'components/robot-component.php' );
             include get_parent_theme_file_path( 'components/meta-seo-component.php' );
         ?>
@@ -14,15 +15,10 @@
         <!-- Font's Used -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet"> 
 
-        
-        <?php 
-            include get_parent_theme_file_path( 'components/meta-seo-component.php' );
-        ?>
-
     </head>
     <body>
         <?php 
-            include get_parent_theme_file_path( 'inc/google/tags_body.php' );
+            include get_parent_theme_file_path( 'components/google/tags_body.php' );
         ?>
 
         <header>
