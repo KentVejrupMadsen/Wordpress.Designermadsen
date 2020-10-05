@@ -21,11 +21,11 @@ if( !function_exists( 'designermadsen_setup_after' ) )
         add_image_size( 'designermadsen-image-preview', 495, 9999 );
         add_image_size( 'designermadsen-image-preview-hd', 720, 9999 );
 
-        the_post_thumbnail('designermadsen-thumb-thumbnail');       // Thumbnail (default 150px x 150px max)
-        the_post_thumbnail('designermadsen-thumb-medium');          // Medium resolution (default 300px x 300px max)
-        the_post_thumbnail('designermadsen-thumb-medium_large');    // Medium Large resolution (default 768px x 0px max)
-        the_post_thumbnail('designermadsen-thumb-large');           // Large resolution (default 1024px x 1024px max)
-        the_post_thumbnail('designermadsen-thumb-full'); 
+        the_post_thumbnail(array(75, 75));      
+        the_post_thumbnail(array(300, 300));          
+        the_post_thumbnail(array(768, 768));   
+        the_post_thumbnail(array(1024, 1024));           
+        the_post_thumbnail(); 
 
     }
 
