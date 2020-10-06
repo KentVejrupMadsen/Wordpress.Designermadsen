@@ -10,10 +10,26 @@
 
 .hidden-on-desktop
 {
-   visibility: hidden;
+   display: block;
 }
 
 .hidden-on-mobile
 {
-   visibility: visible;
+   display: block;
+}
+
+@media screen and (min-width: 800px) 
+{
+   .hidden-on-desktop
+   {
+      display: none !important;
+   }
+}
+
+@media screen and (max-width: 720px) 
+{
+   .hidden-on-mobile
+   {
+      display: none;
+   }
 }

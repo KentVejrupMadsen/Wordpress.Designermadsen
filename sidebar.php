@@ -1,7 +1,7 @@
 <div id="sidebar"> 
     <div>
         <div id="mobile-menu-button" 
-             class="not-active"  
+             class="not-active hidden-on-desktop"  
              v-bind:class="{ active:is_ready }"> 
             <span> 
                 <i class="fas fa-bars"></i>
