@@ -73,6 +73,12 @@ function designermadsen_enqueue_styles()
                       null, 
                       $theme_version, 
                       null );
+
+    wp_enqueue_style( 'fontawesome', 
+                      get_template_directory_uri() . '/inc/framework/fontawesome/css/all.css', 
+                      null, 
+                      0.0, 
+                      null );
 }
 
 if( !function_exists( 'designermadsen_enqueue_scripts' ) )
@@ -80,13 +86,13 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
     function designermadsen_enqueue_scripts()
     {
             wp_enqueue_script( 'vue-js',  
-                               (get_template_directory_uri() . '/inc/framework/javascript/vue.min.js', 
+                               (get_template_directory_uri() . '/inc/framework/javascript/vue.min.js'), 
                                array(), 
                                3.0, 
                                true );
 
             wp_enqueue_script( 'jquery', 
-                               (get_template_directory_uri() . '/inc/framework/javascript/jquery-3.5.1.slim.min.js', 
+                               (get_template_directory_uri() . '/inc/framework/javascript/jquery-3.5.1.slim.min.js'), 
                                array(), 
                                3.5, 
                                true );
@@ -108,8 +114,6 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
                                array('vue-js'), 
                                1.0, 
                                true );
-
-            
 
              wp_enqueue_script( 'mobile-menu',  
                                (get_template_directory_uri() . '/inc/javascript/mobile-menu.js'), 
