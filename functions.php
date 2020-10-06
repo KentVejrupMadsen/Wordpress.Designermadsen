@@ -3,8 +3,6 @@ include get_parent_theme_file_path( 'inc/framework/kirki/kirki.php' );
 
 include get_parent_theme_file_path( 'components/menu/walkers.php' );
 
-$is_debugging = true;
-
 if( !function_exists( 'designermadsen_setup_after' ) )
 {
     function designermadsen_setup_after()
@@ -77,7 +75,7 @@ function designermadsen_enqueue_styles()
     wp_enqueue_style( 'fontawesome', 
                       get_template_directory_uri() . '/inc/framework/fontawesome/css/all.css', 
                       null, 
-                      0.0, 
+                      5.15, 
                       null );
 }
 
