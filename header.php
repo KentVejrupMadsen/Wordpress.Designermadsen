@@ -24,7 +24,7 @@
             include get_parent_theme_file_path( 'components/google/tags_body.php' );
         ?>
 
-        <header>
+        <header class="hidden-on-mobile">
             <?php if( has_nav_menu( 'header-menu' ) ): ?>
                 <?php 
                 wp_nav_menu(
