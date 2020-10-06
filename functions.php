@@ -79,51 +79,51 @@ if( !function_exists( 'designermadsen_enqueue_scripts' ) )
 {
     function designermadsen_enqueue_scripts()
     {
-        if( !isset( $is_debugging ) && ( !$is_debugging ) )
-        {
             wp_enqueue_script( 'vue-js',  
-                               'https://vuejs.org/js/vue.min.js', 
+                               (get_template_directory_uri() . '/inc/framework/javascript/vue.min.js', 
                                array(), 
                                3.0, 
                                true );
 
             wp_enqueue_script( 'jquery', 
-                               'https://code.jquery.com/jquery-3.5.1.slim.min.js', 
+                               (get_template_directory_uri() . '/inc/framework/javascript/jquery-3.5.1.slim.min.js', 
                                array(), 
                                3.5, 
                                true );
 
             wp_enqueue_script( 'axios', 
-                               'https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js', 
+                              (get_template_directory_uri() . '/inc/framework/javascript/axios.min.js'), 
                                array(), 
                                0.2, 
-                               true);
+                               true );
 
             wp_enqueue_script( 'cookie-policy',  
-                               (get_template_directory_uri() . '/type/javascript/cookie-policy.js'), 
+                               (get_template_directory_uri() . '/inc/javascript/cookie-policy.js'), 
                                array('vue-js'), 
                                1.0, 
                                true );
 
             wp_enqueue_script( 'scroll',  
-                               (get_template_directory_uri() . '/type/javascript/scroll.js'), 
+                               (get_template_directory_uri() . '/inc/javascript/scroll.js'), 
                                array('vue-js'), 
                                1.0, 
                                true );
 
+            
+
              wp_enqueue_script( 'mobile-menu',  
-                               (get_template_directory_uri() . '/type/javascript/mobile-menu.js'), 
+                               (get_template_directory_uri() . '/inc/javascript/mobile-menu.js'), 
                                array('vue-js'), 
                                1.0, 
                                true );
 
             wp_enqueue_script( 'more',  
-                               (get_template_directory_uri() . '/type/javascript/more.js'), 
+                               (get_template_directory_uri() . '/inc/javascript/more.js'), 
                                array('vue-js'), 
                                1.0, 
                                true );
 
-        }
+        
         
     }
 }
