@@ -10,7 +10,8 @@
 
         <div id="cookie-policies-button" 
              class="not-active"  
-             v-bind:class="{ active:is_ready }"> 
+             v-bind:class="{ active:is_ready }"
+             v-on:click="return is_clicked;"> 
             <span> 
                 <i class="fas fa-info-circle"></i>
             </span>
@@ -30,8 +31,4 @@
             </span>
         </div> 
     </div>
-</div>
-
-<div id="cookie-policies"> 
-
 </div>
