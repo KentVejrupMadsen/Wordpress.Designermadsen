@@ -85,6 +85,27 @@
     grid-column: span 2;
 }
 
+#cookie-policy
+{
+    @extend .background;
+    @extend .py-2;
+
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+#cookie-policy .containment
+{
+    @extend .container;
+}
+
+.accepted
+{
+    display: none !important;
+}
+
 @media screen and (max-width: 1024px) 
 {
     #relavant .containment
